@@ -13,7 +13,7 @@ createAutoComplete({
     return recipe.title;
   },
   async fetchData(searchTerm) {
-    const response = await axios.get(`https://api.spoonacular.com/recipes/search?query=${searchTerm}&apiKey=83640a2b6d774f15861a50728acade86`);
+    const response = await axios.get(`https://api.spoonacular.com/recipes/search?query=${searchTerm}&apiKey=XXX`);
 
     if (response.data.Error) {
       return [];
@@ -24,7 +24,7 @@ createAutoComplete({
 });
 
 const onRecipeSelect = async (recipe) => {
-  const response = await axios.get(`https://api.spoonacular.com/recipes/${recipe.id}/information?includeNutrition=true&apiKey=83640a2b6d774f15861a50728acade86`);
+  const response = await axios.get(`https://api.spoonacular.com/recipes/${recipe.id}/information?includeNutrition=true&apiKey=XXX`);
 
   document.querySelector('#summary').innerHTML = recipeTemplate(response.data);
 };
